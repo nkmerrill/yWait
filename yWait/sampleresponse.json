@@ -1,0 +1,58 @@
+{
+  "epoch_analysis": "1627163375", 
+  "venue_info":
+   {
+     "venue_address": "5650 Industrial Pl, Colorado Springs, CO 80916" 
+    }, 
+  "analysis": [
+  {
+    "day_info": 
+    {
+      "day_text": "Monday", "venue_open": 7
+    },
+    "quiet_hours": [6]
+  }, 
+  {
+    "day_info": 
+    {
+      "day_text": "Tuesday", "venue_open": 7
+    }, 
+    "quiet_hours": [ 16, 17]
+  }, 
+  {
+    "day_info": 
+    {
+      "day_text": "Wednesday", "venue_open": 4
+    }, 
+    "quiet_hours": [4]
+  }, 
+  {
+    "day_info": 
+    {
+      "day_text": "Thursday", "venue_open": 7
+    }, 
+    "quiet_hours": [4, 7, 16, 17]
+  }, 
+  {
+    "day_info": 
+    {
+      "day_text": "Friday", "venue_open": 7
+    },
+    "quiet_hours": [7, 13, 16, 17] 
+  }, 
+  {
+    "day_info": 
+    {
+      "day_text": "Saturday", "venue_open": "Closed" 
+    },
+    "quiet_hours": []
+  }, 
+  {
+    "day_info": 
+    {
+      "day_text": "Sunday", "venue_open": "Closed" 
+    }, 
+    "quiet_hours": [] 
+  }
+]
+}

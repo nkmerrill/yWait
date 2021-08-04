@@ -1,0 +1,11 @@
+ {% if permViewLoc %}
+ {% if locationList %}
+	{% for location in locationList %}
+<a href='{% url 'yWait:viewLocation' location.pk %}'>{{ location.venueName }}</a> 
+	{% endfor %}
+{% else %}
+<p>No locations available.</p>
+{% endif %}
+  {% else %}
+    <p>{% include 'yWait/users/denied.html' %}</p>
+  {% endif %}

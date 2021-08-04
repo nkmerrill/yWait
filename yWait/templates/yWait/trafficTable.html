@@ -1,0 +1,17 @@
+  <table border=1>
+    <tr>
+      <td>Day:</td>
+      <td>Monday</td>
+      <td>Tuesday</td>
+      <td>Wednesday</td>
+      <td>Thursday</td>
+      <td>Friday</td>
+      <td>Saturday</td>      
+      <td>Sunday</td>
+    </tr>
+    <tr>
+      <td> Best Hour(s): </td>
+      {% for h in hours %}
+      <td>{{h}}</td>
+      {% endfor %}
+    </tr>

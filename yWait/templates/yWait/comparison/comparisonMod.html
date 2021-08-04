@@ -1,0 +1,13 @@
+{% extends 'yWait/base.html' %}
+
+{% block content %}
+{% if perm %}
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Save">
+</form>
+{% else %}
+  {% include 'yWait/users/denied.html' %}
+{% endif %}
+{% endblock %}

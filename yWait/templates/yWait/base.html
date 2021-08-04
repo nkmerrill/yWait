@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang='en'>
+  <head>
+    <meta charset="UTF-8">
+    <title>yWait</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+  </head>
+  <body>
+    <div class='topBar'>    
+      <div class='title'>yWait</div>
+      <div class='userbar'>{% include 'yWait/users/bar.html' %}</div>
+    </div>
+    <br/>
+    {% if errorMSG %}
+    <div class="error">{{ errorMSG }}</div>
+    {% endif %}
+    <div class="conent">{% block content %}{% endblock content %}</div>
+    <br/>
+    <div class="menu"><a href= '{% url 'yWait:index'%}' >Home</a>
+  </body>
+</html>

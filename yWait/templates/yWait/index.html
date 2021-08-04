@@ -1,0 +1,14 @@
+{% extends "yWait/base.html" %}
+
+{% block content %}
+<div class="compList">
+    <h1>Comparisons</h1>
+    {% if permAddComp %}<p><a href='{% url 'yWait:createComparison' %}'>Add New</a></p>{% endif %}
+    {% include 'yWait/comparison/comparisonList.html' %}
+</div>
+<div class="locList">
+    <h1>Locations</h1>
+    {% if permAddLoc %}<p><a href='{% url 'yWait:createLocation' %}'>Add New</a></p> {% endif %}
+    {% include 'yWait/location/locationList.html' %}
+</div>
+{% endblock content %}

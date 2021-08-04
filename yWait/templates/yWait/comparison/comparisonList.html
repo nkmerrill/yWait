@@ -1,0 +1,13 @@
+  {% if permViewComp %}
+  {% if comparisonList %}
+
+    {% for comparison in comparisonList %}
+<a href='{% url 'yWait:updateComparison' comparison.pk %}'>{{ comparison.name }}</a> 
+    {% endfor %}
+  {% else %}
+    <p>No comparisons available.</p>
+  {% endif %}
+  {% else %}
+  <p>{% include 'yWait/users/denied.html' %}</p>
+  {% endif %}
+  

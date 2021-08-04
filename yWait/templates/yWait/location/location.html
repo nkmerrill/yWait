@@ -1,0 +1,26 @@
+{% extends "yWait/base.html" %}
+
+{% block content %}
+{% if perm %}
+<h1 class = "objTitle">{{ object.venueName }}</h1>
+<h3 class = "objSubTitle">{{ object.venueAddress }}</h3>
+<h3 class = "objAuthor">Contributed by {{ object.author }}</h3>
+<p/>
+<div class="objTable">
+{% include 'yWait/trafficTable.html' %}
+  </table>
+</div><p/>
+<div class="objGraph">
+  {{graph|safe}}
+</div>
+<div class="objUpdate"> Data last updated {{time}} </div>
+<div class = "mngBar">
+  {% if permUpdate %}<div class="upd"><a href= '{%url 'yWait:updateLocation' object.pk %}'>Update</a></div>{% endif %}
+  
+  {% if permDelete or isAuthor %}
+  <div class="del"><a href= '{%url 'yWait:deleteLocation' object.pk %}'>Delete</a></div></div>
+  {% endif %}
+{% else %}
+    {% include 'yWait/users/denied.html' %}
+{% endif %}
+{% endblock content %}

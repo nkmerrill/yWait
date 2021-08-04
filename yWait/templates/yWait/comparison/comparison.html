@@ -1,0 +1,40 @@
+{% extends "yWait/base.html" %}
+
+{% block content %}
+{% if perm %}
+<h1 class="objTitle">{{ object.name }}</h1>
+<h3 class="objAuthor">Contributed by {{ object.author }}</h3>
+<div class="objTable">
+      {% include 'yWait/trafficTable.html' %}
+      <tr>
+        <td> Best Address: </td>
+        {% for o in address %}
+        <td> {{ o }} </td>
+        {% endfor %}
+      </tr>
+      <tr>
+        <td> Best Name: </td>
+        {% for o in name %}
+        <td> {{o}} </td>
+        {% endfor %}
+      </tr>
+  </table>
+</div><p/>
+<div class="objGraph">
+  {{graph|safe}}
+</div>
+<div class="objSubObj">
+<h2>Locations in {{ object.name }} {% if isAuthor or user.is_superuser %} <a href= '{%url 'yWait:modifyComparison' object.pk %}'>[Modify]</a>{% endif %}</h2>
+  {% include 'yWait/location/locationList.html' %}
+</div>
+<div class="objUpdate"> Data last updated {{time}} </div>
+<div class="mngBar">
+  {% if permUpdate %}<div class="upd"><a href= '{%url 'yWait:updateComparison' object.pk %}'>Update</a></div>{% endif %}
+
+  {% if permDelete or isAuthor %}
+  <div class="del">
+  <a href= '{%url 'yWait:deleteComparison' object.pk %}'>Delete</a></div></div>{% endif %}
+{% else %}
+    {% include 'yWait/users/denied.html' %}
+{% endif %}
+{% endblock content %}
